@@ -20,12 +20,12 @@ HPC$Date = strptime(paste(HPC$Date, HPC$Time), format = "%d/%m/%Y %H:%M:%S")
 #Remove the Time column of my data.frame
 HPC$Time = NULL
 #Plots in current device, a single graph
-par(mfrow=c(1,1)) 
+#par(mfrow=c(1,1)) 
 plot(HPC$Date, HPC$Sub_metering_1, type = "l", xlab = "Date", ylab = "Sub metering")
 lines(HPC$Date, HPC$Sub_metering_2, col = "red")
 lines(HPC$Date, HPC$Sub_metering_3, col = "blue")
 legend('topright', legend= c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col=c('black', 'red', 'blue'), lty = 1)
 dev.set(which = 2)
-#Prints plot from current device (RStudioGD) to selected device
+#Prints plot from current device (RStudioGD) to selected device, using dev.print squeezes the graphs and may lead to cropped graphs
 dev.print(device = png, file = "plot3.png", width = 480, height = 480)
 dev.prev()
