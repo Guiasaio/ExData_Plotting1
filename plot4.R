@@ -29,6 +29,7 @@ with(HPC, plot(Date, Voltage, type = "l"))
 plot(HPC$Date, HPC$Sub_metering_1, type = "l", xlab = "Date", ylab = "Sub metering")
 lines(HPC$Date, HPC$Sub_metering_2, col = "red")
 lines(HPC$Date, HPC$Sub_metering_3, col = "blue")
+legend('topright', legend= c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col=c('black', 'red', 'blue'), lty = 1)
 #  4th Plot
 with(HPC, plot(Date, Global_reactive_power, type = "l"))
 dev.set(which = 2)
