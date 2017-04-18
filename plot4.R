@@ -33,6 +33,6 @@ legend('topright', legend= c("Sub_metering_1","Sub_metering_2","Sub_metering_3")
 #  4th Plot
 with(HPC, plot(Date, Global_reactive_power, type = "l"))
 dev.set(which = 2)
-#Prints plot from current device (RStudioGD) to selected device
+#Prints plot from current device (RStudioGD) to selected device, using dev.print squeezes the graphs and may lead to cropped graphs
 dev.print(device = png, file = "plot4.png", width = 480, height = 480)
 dev.prev()
